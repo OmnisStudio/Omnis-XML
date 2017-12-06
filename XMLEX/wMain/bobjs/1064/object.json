@@ -1,0 +1,27 @@
+{
+	"ident": 1064,
+	"order": 16390,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabel",
+		"font": 5,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 21,
+		"left": 3,
+		"objlink": 65554,
+		"text": "Click on element in tree to add/edit/delete it",
+		"textcolor": "kColorWindowText",
+		"top": 3,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 242
+	}
+}

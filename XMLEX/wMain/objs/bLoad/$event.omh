@@ -1,0 +1,10 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	
+	Do FileOps.$getfilename(lDir,'Choose XML file to load','XML Files|*.xml') Returns #F
+	If flag true
+		Do oXML.$setempty() Returns #F     ;; clear the document object, to create a new one from scratch
+		;  Do oXML.$ignoreparserwarnings.$assign(kTrue) Returns #F
+		Do oXML.$parservalidates.$assign(kFalse) Returns #F
+		Do oXML.$loadfile(lDir,lError)
+		Do $cinst.$UpdateList()
+	End If

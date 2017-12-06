@@ -1,0 +1,18 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Prompt for input Attribute Name: Returns iAttName (Cancel button)
+	If flag true
+		If iAttName<>''
+			Prompt for input Attribute's value: Returns iAttValue (Cancel button)
+			If flag true
+				If iAttValue<>''
+					OK message Info {Attribute set}
+					Do iAttList.$add(iAttName,iAttValue)
+					Do $cinst.$redraw()
+				Else
+					OK message Error! {You must set a value for the attribute}
+				End If
+			End If
+		Else
+			OK message Error! {You must set a name for the attribute}
+		End If
+	End If

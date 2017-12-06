@@ -1,0 +1,3 @@
+Calculate lParent as pDel.$parentnode()
+Do lParent.$removechild(pDel,lError) Returns #F
+Do $cinst.$UpdateList()

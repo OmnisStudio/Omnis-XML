@@ -1,0 +1,11 @@
+Do oXML.$setempty() Returns #F     ;; clear the document object, to create a new one from scratch
+
+
+Do oXML.$createelement('Root',lError) Returns oRoot     ;; Create a root element
+Do oXML.$appendchild(oRoot,lError) Returns #F     ;; Add the root element to the DOM document.
+
+Calculate oParent as oRoot     ;; We use oParent to define the parent element of elements we create
+
+Do $cinst.$UpdateList()     ;; Update the tree
+
+Do $cinst.$enabling(kTrue)

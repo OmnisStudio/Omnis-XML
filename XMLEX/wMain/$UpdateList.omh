@@ -1,0 +1,2 @@
+Do oXML.$savetree(iXMLList,lError,1)     ;; Saves the data in oXML to a list, suitable to be displayed in a tree component
+Do $cinst.$redraw()

@@ -1,0 +1,9 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $cinst.$enabling(kTrue)
+	
+	;  Clean up variables ready for next time:
+	Calculate iName as ''
+	Calculate iText as ''
+	Calculate iComment as ''
+	Calculate iAttName as ''
+	Calculate iAttValue as ''

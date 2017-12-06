@@ -1,0 +1,4 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Calculate iEdit as kFalse
+	Do $cinst.$enabling(kFalse)
+	Do iAttList.$define('','')     ;; Clear the attributes list.

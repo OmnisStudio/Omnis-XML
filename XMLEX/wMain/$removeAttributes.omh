@@ -1,0 +1,5 @@
+Do pEle.$attributemap Returns lAttNodes     ;; Get attributes of element we have clicked on
+
+For i from 0 to (lAttNodes.$length-1) step 1
+	Do pEle.$removeattribute(lAttNodes.$item(0).$attname,lError) Returns #F     ;; Will always be $item(0) as we're deleting one each time, and want to delete all of them
+End For

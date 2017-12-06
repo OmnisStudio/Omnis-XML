@@ -1,0 +1,49 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	If iName=''
+		OK message Warning! {You must set a name for the element!}
+		Quit method
+	End If
+	
+	If iEdit=kTrue     ;; If we're editing an element - delete all of its properties first, then add the new ones below.
+		Do $cinst.$delProps()
+		Do $cinst.$removeAttributes(oElement)
+	Else
+		;  Create the element:
+		Do oXML.$createelement(iName,lError) Returns oElement     ;; create the  element object if we're not editing one
+	End If
+	
+	;  Add all of the element's properties:
+	If iAttList.$linecount>0     ;; Add attribute to element ---------------------------------
+		Do $cinst.$addAttributes(oElement)
+	End If     ;; --------------------------------------------------------------------------------------
+	
+	
+	If iText<>''     ;; Add text node ------------------------------------------------------------------------
+		If iParsed=kTrue
+			Do oXML.$createtextnode(iText,lError) Returns oObj     ;; create parsed text node
+		Else
+			Do oXML.$createcdatasection(iText,lError) Returns oObj     ;; Create unparsed text (CDATA) node
+		End If
+		Do oElement.$appendchild(oObj,lError) Returns #F     ;; Append the text node to the current node.
+	End If     ;; --------------------------------------------------------------------------------------
+	
+	If iComment<>''     ;; Add Comment node ----------------------------------------------------------
+		Do oXML.$createcomment(iComment,lError) Returns oObj
+		Do oElement.$appendchild(oObj,lError) Returns #F
+	End If     ;; ---------------------------------------------------------------------------------------------------
+	
+	
+	Do oParent.$appendchild(oElement,lError) Returns #F     ;; Add the element as a child of its parent.
+	
+	If flag true     ;; If managed to add it:
+		Do $cinst.$UpdateList()
+		Do $cinst.$enabling(kTrue)
+		
+		;  Clear variables ready for next time:
+		Calculate iName as ''
+		Calculate iText as ''
+		Calculate iAttName as ''
+		Calculate iAttValue as ''
+		Calculate iComment as ''
+		
+	End If

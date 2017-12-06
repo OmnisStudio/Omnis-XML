@@ -1,0 +1,60 @@
+{
+	"ident": 1059,
+	"order": 18,
+	"objtype": "kPagedPane",
+	"properties": {
+		"active": true,
+		"alpha": 255,
+		"backcolor": "kColorWindow",
+		"backgroundtheme": "kBGThemeParent",
+		"backpattern": 0,
+		"bordercolor": "RGB(0,0,0)",
+		"candropcursor": 0,
+		"contextmenu": "",
+		"currentpage": 1,
+		"cursor": 0,
+		"desgroup": 0,
+		"designactive": true,
+		"deslock": false,
+		"dragborder": false,
+		"dragiconid": 0,
+		"dragmode": "kNoDragging",
+		"dragrange": "kRangeAll",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"effect": "kBorderNone",
+		"enabled": true,
+		"fieldstyle": "",
+		"forecolor": "kColor3DFace",
+		"height": 431,
+		"helpfile": 0,
+		"horzscroll": false,
+		"keyevents": false,
+		"left": 7,
+		"mouseevents": false,
+		"nodropcursor": 0,
+		"objlink": 0,
+		"pagecount": 1,
+		"rmouseevents": false,
+		"statusevents": false,
+		"tooltip": {
+			"type": 0,
+			"calc": "Add new element as child of highlighted node in tree"
+		},
+		"top": 12,
+		"userinfo": "",
+		"vertscroll": false,
+		"visible": true,
+		"width": 409
+	},
+	"multivalueproperties": {
+		"properties": [
+			{
+				"pagename": ""
+			}
+		]
+	},
+	"allpanes": [
+		1018
+	]
+}

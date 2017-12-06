@@ -1,0 +1,3 @@
+For i from 1 to iAttList.$linecount step 1
+	Do pEle.$setattribute(iAttList.[i].1,iAttList.[i].2,lError) Returns #F
+End For

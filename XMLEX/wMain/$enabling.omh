@@ -1,0 +1,14 @@
+Calculate $cinst.$objs.pMain.$enabled as pEnable
+Calculate $cinst.$objs.pPane.$visible as not(pEnable)
+
+If iEdit=kTrue     ;; If we're editing - can't change the name of the element
+	Calculate $cinst.$objs.eName.$enabled as kFalse
+Else
+	Calculate $cinst.$objs.eName.$enabled as kTrue
+End If
+
+Calculate $cinst.$objs.bDelElement.$enabled as kFalse
+Calculate $cinst.$objs.bEdit.$enabled as kFalse
+Calculate $cinst.$objs.bAddEle.$enabled as kFalse
+
+Do $cinst.$redraw()

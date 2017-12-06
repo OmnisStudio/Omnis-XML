@@ -1,0 +1,5 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do FileOps.$putfilename(lDir,'Choose save location','XML Files|*.xml') Returns #F
+	If flag true
+		Do oXML.$savefile(lDir,lError,kFalse,kXMLFormatFull) Returns #F
+	End If

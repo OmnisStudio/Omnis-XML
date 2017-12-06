@@ -1,0 +1,7 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do $cinst.$deleteNode(oParent)
+	
+	;  Calculate $cobj.$enabled as kFalse
+	;  Calculate $cinst.$objs.bEdit.$enabled as kFalse
+	;  Calculate $cinst.$objs.bAddEle.$enabled as kFalse
+	Do $cinst.$enabling(kTrue)

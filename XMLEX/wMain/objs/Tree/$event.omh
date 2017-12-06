@@ -1,0 +1,31 @@
+On evWTreeNodeClick
+	
+	If iXMLList.[pNodeIdent].type=3004     ;; Only if it's an element (nodeType=3004)
+		
+		For i from 1 to pNodeIdent step 1
+			If iXMLList.[i].type<>3004     ;; If it's not an element, subtract 1 from pNodeIdent to get it as the element number rather than node number.
+				Calculate $root.pNodeIdent as pNodeIdent-1
+			End If
+		End For
+		
+		Do oXML.$getelementsbytagname('*',lError) Returns oAll     ;; Get list of all elements
+		Calculate oParent as oAll.$item(pNodeIdent-1)     ;; Set oParent to the element in the list corresponding to the node clicked.
+		
+		
+		;  Just enabling/disabling buttons depending on what was clicked on now:
+		Calculate $cinst.$objs.bAddEle.$enabled as kTrue
+		
+		If oParent.$tagname='Root'     ;; If it's the root we've clicked on, don't allow to edit or delete it
+			Calculate $cinst.$objs.bEdit.$enabled as kFalse
+			Calculate $cinst.$objs.bDelElement.$enabled as kFalse
+		Else
+			Calculate $cinst.$objs.bEdit.$enabled as kTrue
+			Calculate $cinst.$objs.bDelElement.$enabled as kTrue
+		End If
+		
+	Else
+		;  If it's not an element, don't allow it to be edited, deleted or a child added to it
+		Calculate $cinst.$objs.bEdit.$enabled as kFalse
+		Calculate $cinst.$objs.bDelElement.$enabled as kFalse
+		Calculate $cinst.$objs.bAddEle.$enabled as kTrue
+	End If

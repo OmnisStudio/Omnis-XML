@@ -1,0 +1,23 @@
+;  Adds a processing instruction to the start of the document.
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Prompt for input Target Name: Returns lTarget (Cancel button)
+	If flag true
+		If lTarget<>''
+			Prompt for input Instruction: Returns lInstruction (Cancel button)
+			If flag true
+				If lInstruction<>''
+					Do oXML.$createprocessinginstruction(lTarget,lInstruction,lError) Returns oObj
+					Do oXML.$insertbefore(oObj,oRoot,lError) Returns #F
+					If flag true
+						OK message Info {Processing Instruction added}
+					Else
+						OK message Error! {Could not add processing instruction.}
+					End If
+				Else
+					OK message Error! {You must set an instruction}
+				End If
+			End If
+		Else
+			OK message Error! {You must set a target}
+		End If
+	End If

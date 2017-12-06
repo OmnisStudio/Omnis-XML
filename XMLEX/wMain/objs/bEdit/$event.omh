@@ -1,0 +1,21 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Calculate iEdit as kTrue
+	
+	Calculate iName as oParent.$tagname
+	
+	Do oParent.$childnodes(lError) Returns oObj
+	For i from 0 to oObj.$length-1 step 1
+		Calculate oNode as oObj.$item(i)
+		Do $cinst.$setprops(oNode.$nodename)
+	End For
+	
+	
+	Do oParent.$attributemap(lError) Returns oObj
+	
+	Do iAttList.$define('Att','Name')     ;; Populate list with element's attributes
+	For i from 0 to oObj.$length-1 step 1
+		Do iAttList.$add(oObj.$item(i).$attname,oObj.$item(i).$attvalue)
+	End For
+	
+	Do $cinst.$enabling(kFalse)
+	Do $cinst.$objs.eName.$hasfocus.$assign(kTrue) Returns #F

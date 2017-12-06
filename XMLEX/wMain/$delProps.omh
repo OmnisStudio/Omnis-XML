@@ -1,0 +1,15 @@
+Do oParent.$childnodes(lError) Returns oObj     ;; Get the child nodes of the element we have clicked on (oParent)
+
+Calculate i as 0
+While i<oObj.$length
+	Calculate oNode as oObj.$item(i)
+	
+	If oNode.$nodetype<>3004     ;; If the child is not an element (nodeType=3004), delete it.
+		Do $cinst.$deleteNode(oNode)
+		Calculate i as i-1     ;; As we've now deleted a node
+	End If
+	Calculate i as i+1
+End While
+
+Calculate oElement as oParent     ;; Set the element which we're going to edit as the element clicked on
+Calculate oParent as oElement.$parentnode()     ;; Get the parent of our element

@@ -1,0 +1,27 @@
+{
+	"ident": 1046,
+	"order": 16387,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "",
+		"font": 5,
+		"fontsize": 0,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 19,
+		"left": 18,
+		"objlink": 65553,
+		"text": "Comment:",
+		"textcolor": "kColorWindowText",
+		"top": 180,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 85
+	}
+}

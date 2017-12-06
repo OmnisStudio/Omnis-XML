@@ -1,0 +1,14 @@
+Switch pType
+	
+	Case '#text'
+		Calculate iText as oNode.$textdata
+		Calculate iParsed as kTrue
+		
+	Case '#cdata-section'
+		Calculate iText as oNode.$textdata
+		Calculate iParsed as kFalse
+		
+	Case '#comment'
+		Calculate iComment as oNode.$textdata
+		
+End Switch
