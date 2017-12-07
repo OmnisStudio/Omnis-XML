@@ -1,5 +1,5 @@
 # Omnis-XML
-Library shows how to create, edit, and format XML docs using the oXML external component. For more information about this library and using oXML see the tech note: http://www.omnis.net/technotes/tnxm0001.jsp
+Library shows how you can create, edit, and format XML docs using the oXML external component. For more information about this library and using oXML see the tech note: http://www.omnis.net/technotes/tnxm0001.jsp
 
 Requires Omnis Studio 8.1.2 or above.
 
